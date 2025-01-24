@@ -16,7 +16,6 @@ return { -- Collection of various small independent plugins/modules
 		-- - sr)'  - [S]urround [R]eplace [)] [']
 		require("mini.surround").setup()
 		require("mini.pairs").setup()
-		require("mini.files").setup()
 		require("mini.animate").setup({
 			scroll = {
 				-- Whether to enable this animation

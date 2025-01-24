@@ -53,7 +53,7 @@ return {
 			})
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+			capabilities = vim.tbl_deep_extend("force", capabilities, require('blink.cmp').get_lsp_capabilities())
 
 			-- Enable the following language servers
 			--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -67,7 +67,7 @@ return {
 			local servers = {
 				-- clangd = {},
 				gopls = {},
-				pyright = {},
+				-- pyright = {},
 				-- rust_analyzer = {},
 
 				lua_ls = {
@@ -91,8 +91,6 @@ return {
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua",
-				"black",
-				"isort",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
